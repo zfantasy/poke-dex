@@ -50,5 +50,18 @@ md-list-item > button {
 }
 
 .text-center {
-  text-align: center;
+  text-align: center !important;
+}
+
+.no-margin {
+  margin: 0px;
+}
+
+.no-padding {
+  padding: 0px;
+}
+
+.no-min {
+  min-height: 0px;
+  min-width: 0px;
 }

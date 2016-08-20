@@ -1,9 +1,8 @@
-
 <div layout="row">
     <div md-whiteframe="1" style="width:100%;">
         <md-autocomplete
             md-search-text="vm.search"
-          md-items="pokemon in vm.pokemons"
+          md-items="pokemon in data.pokemons"
           md-item-text="pokemon.Name"
           md-min-length="4"
           placeholder="Search">
@@ -14,6 +13,19 @@
           No Pokemon matching "{{vm.search}}" were found.
         </md-not-found>
       </md-autocomplete>
+      <div layout="row">
+          <md-list>
+            <md-list-item>
+                <md-button class="no-min md-raised text-center" style="height:22px; line-height:22px" ng-click="vm.type=undefined">
+                    All
+                </md-button>
+                <md-button ng-repeat="type in data.types_dict" class="no-margin no-padding no-min" ng-click="vm.type=type">
+                    <img src="images/type/{{type}}.gif" style="padding: 5px;"
+                    alt="{{type}}">
+                 </md-button>
+            </md-list-item>
+          </md-list>
+      </div>
         <div layout="row">
             <h4 flex="10" class="text-center">ID</h4>
             <h4 flex="40">Name</h4>
@@ -23,7 +35,7 @@
         </div>
         <md-divider></md-divider>
         <md-list>
-            <md-list-item class="md-1-line" ng-repeat="pokemon in vm.pokemons | filter:vm.search" ng-click="null">
+            <md-list-item ng-repeat="pokemon in data.pokemons | filter:vm.search | filter:vm.filter" ng-click="null">
                 <span flex="10" class="text-center">{{pokemon.Id}}</span>
                 <div flex="40">               
                     <img src="images/pokemon/small/{{pokemon.Id}}.png" class="md-avatar" alt="{{pokemon.Name}}<">

@@ -7,10 +7,13 @@
 
     var ListCtrl = function ($rootScope, $http) {
         var vm = this;
-        $http.get('data/pokemon.json')
-            .then(function(res){
-                vm.pokemons = res.data;                
-                });
+
+        vm.filter = function (pokemon) {
+            if(!vm.type) return true;
+            if(pokemon.Type1 === vm.type || pokemon.Type2 === vm.type) {
+                return true;
+            }
+        }
     };
 
     ListCtrl.$inject = injectParams;
