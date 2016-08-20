@@ -1,0 +1,45 @@
+
+<div layout="row">
+    <div md-whiteframe="1" style="width:100%;">
+        <md-autocomplete
+            md-search-text="vm.search"
+          md-items="pokemon in vm.pokemons"
+          md-item-text="pokemon.Name"
+          md-min-length="4"
+          placeholder="Search">
+        <md-item-template>
+          <span md-highlight-text="vm.search" md-highlight-flags="^i">{{pokemon.Name}}</span>
+        </md-item-template>
+        <md-not-found>
+          No Pokemon matching "{{vm.search}}" were found.
+        </md-not-found>
+      </md-autocomplete>
+        <div layout="row">
+            <h4 flex="10" class="text-center">ID</h4>
+            <h4 flex="40">Name</h4>
+            <h4 flex="30">Type</h4>
+            <h4 flex="20">Max CP</h4>
+            <h4 flex="20">Max HP</h4>
+        </div>
+        <md-divider></md-divider>
+        <md-list>
+            <md-list-item class="md-1-line" ng-repeat="pokemon in vm.pokemons | filter:vm.search" ng-click="null">
+                <span flex="10" class="text-center">{{pokemon.Id}}</span>
+                <div flex="40">               
+                    <img src="images/pokemon/small/{{pokemon.Id}}.png" class="md-avatar" alt="{{pokemon.Name}}<">
+                    <h4 class="inline">{{pokemon.Name}}</h4>
+                </div>
+                <div flex="30">
+                    <img src="images/type/{{pokemon.Type1}}.gif" class="md-card-image" alt="{{pokemon.Type1}}">
+                    <img src="images/type/{{pokemon.Type2}}.gif" class="md-card-image" alt="{{pokemon.Type2}}" ng-if="pokemon.Type2 != 'None'">
+                </div>
+                <div flex="20">
+                    {{pokemon['Max CP']}}
+                </div>
+                <div flex="20">
+                    {{pokemon['Max HP']}}
+                </div>
+            </md-list-item>
+        </md-list>
+    </div>
+</div>
