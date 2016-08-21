@@ -2,18 +2,28 @@
   "name": "poke-dex",
   "version": "1.0.0",
   "description": "pokedex for pkmg",
-  "main": "app.js",
+  "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node index.js"
   },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/zfantasy/poke-dex.git"
   },
   "author": "Liem",
-  "license": "ISC",
   "bugs": {
     "url": "https://github.com/zfantasy/poke-dex/issues"
   },
-  "homepage": "https://github.com/zfantasy/poke-dex#readme"
+  "homepage": "https://github.com/zfantasy/poke-dex#readme",
+    "dependencies": {
+    "ejs": "2.4.1",
+    "express": "4.13.3"
+  },
+  "keywords": [
+    "node",
+    "heroku",
+    "express"
+  ],
+  "license": "ISC"
 }
