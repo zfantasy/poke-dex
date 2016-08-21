@@ -20,7 +20,7 @@
                     All
                 </md-button>
                 <md-button ng-repeat="type in data.types_dict" class="no-margin no-padding no-min" ng-click="vm.type=type">
-                    <img src="images/type/{{type}}.gif" style="padding: 5px;"
+                    <img src="images/type/{{type.toLowerCase()}}.gif" style="padding: 5px;"
                     alt="{{type}}">
                  </md-button>
             </md-list-item>
@@ -42,8 +42,8 @@
                     <h4 class="inline">{{pokemon.Name}}</h4>
                 </div>
                 <div flex="30">
-                    <img src="images/type/{{pokemon.Type1}}.gif" class="md-card-image" alt="{{pokemon.Type1}}">
-                    <img src="images/type/{{pokemon.Type2}}.gif" class="md-card-image" alt="{{pokemon.Type2}}" ng-if="pokemon.Type2 != 'None'">
+                    <img src="images/type/{{pokemon.Type1.toLowerCase()}}.gif" class="md-card-image" alt="{{pokemon.Type1}}">
+                    <img src="images/type/{{pokemon.Type2.toLowerCase()}}.gif" class="md-card-image" alt="{{pokemon.Type2}}" ng-if="pokemon.Type2 != 'None'">
                 </div>
                 <div flex="20">
                     {{pokemon['Max CP']}}
