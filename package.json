@@ -1,0 +1,19 @@
+{
+  "name": "poke-dex",
+  "version": "1.0.0",
+  "description": "pokedex for pkmg",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/zfantasy/poke-dex.git"
+  },
+  "author": "Liem",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/zfantasy/poke-dex/issues"
+  },
+  "homepage": "https://github.com/zfantasy/poke-dex#readme"
+}
